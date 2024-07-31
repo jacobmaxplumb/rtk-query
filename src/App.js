@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { useAddTodoMutation, useGetTodosQuery } from './redux/todoApi';
+import { useGetUserByIdQuery, useGetUsersQuery } from './redux/usersApi';
 
 function App() {
+  const [text, setText] = useState('');
+  const {data: todos} = useGetTodosQuery();
+  const {data: users} = useGetUsersQuery();
+  const [addTodo] = useAddTodoMutation();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input value={text} onChange={(e) => setText(e.target.value)}/>
+      <button onClick={() => addTodo(text)}>Add</button>
+      {todos && todos.map(todo => <li key={todo.id}>{todo.text}</li>)}
     </div>
   );
 }

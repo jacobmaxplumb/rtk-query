@@ -1,0 +1,36 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "text": "Get Food",
+      "completed": false
+    },
+    {
+      "id": "1722465779051",
+      "text": "something ",
+      "completed": false
+    },
+    {
+      "id": 1722466479837,
+      "text": "jkhlkjlk",
+      "completed": false
+    },
+    {
+      "id": 1722466567551,
+      "text": "something",
+      "completed": false
+    },
+    {
+      "id": 1722466646250,
+      "text": "asdfas",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "jacob",
+      "lastName": "plumb"
+    }
+  ]
+}
